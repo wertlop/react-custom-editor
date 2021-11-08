@@ -4,9 +4,8 @@
     "standard",
     "standard-react",
     "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier"
   ],
   "env": {
     "node": true
@@ -24,6 +23,8 @@
     }
   },
   "rules": {
+    "no-unused-vars": 0,
+    "no-unused-expressions": 1,
     "space-before-function-paren": 0,
     "react/prop-types": 0,
     "react/jsx-handler-names": 0,
