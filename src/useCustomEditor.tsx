@@ -5,11 +5,10 @@ export const STROKE = '#000000'
 
 export const TEXT = {
   type: 'text',
-  left: 100,
-  top: 100,
   fontSize: 16,
   fontFamily: 'Arial',
-  fill: STROKE
+  fill: STROKE,
+  top: 150
 }
 
 export interface FabricJSEditor {
@@ -57,7 +56,9 @@ const buildEditor = (
       // use stroke in text fill, fill default is most of the time transparent
       const object = new fabric.Textbox(text, {...TEXT, fill: strokeColor})
       object.set({text: text})
+      object.clipPath = mask
       canvas.add(object)
+      canvas.centerObjectH(object)
     },
     updateText: (text: string) => {
       const objects: any[] = canvas.getActiveObjects()
